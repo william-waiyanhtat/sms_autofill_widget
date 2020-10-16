@@ -1,8 +1,8 @@
 name: sms_auto_fill_widget
-description: A new Flutter package.
+description: SMS Autofill Textbox Widget
 version: 0.0.1
-author:
-homepage:
+author: Wai Yan
+homepage: https://github.com/william-waiyanhtat/sms_autofill_widget
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
