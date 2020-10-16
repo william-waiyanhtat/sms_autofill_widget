@@ -31,16 +31,22 @@ class _SmsAutoFillWidgetState extends State<SmsAutoFillWidget> {
       padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
       child: PinFieldAutoFill(
         codeLength: _codeLength,
-        onCodeChanged: (val) {},
+        onCodeChanged: (val) {
+          print(val);
+        },
       ),
     );
   }
-}
 
-void _listenOTP() async {
-  await SmsAutoFill().listenForCode;
-}
+  void setCodeLenght(int length) {
+    _codeLength = length;
+  }
 
-void getAppSignature() async {
-  await SmsAutoFill().getAppSignature;
+  void _listenOTP() async {
+    await SmsAutoFill().listenForCode;
+  }
+
+  void getAppSignature() async {
+    await SmsAutoFill().getAppSignature;
+  }
 }
