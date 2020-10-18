@@ -14,7 +14,7 @@ class SmsAutoFillWidget extends StatefulWidget {
 
   const SmsAutoFillWidget({Key key, this.codeLength = 4});
 
-  getAppSignature() async {
+  Future<String> getAppSignature() async {
     return await SmsAutoFill().getAppSignature;
   }
 
