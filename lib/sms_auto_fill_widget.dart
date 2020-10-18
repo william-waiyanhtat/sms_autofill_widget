@@ -14,6 +14,10 @@ class SmsAutoFillWidget extends StatefulWidget {
 
   const SmsAutoFillWidget({Key key, this.codeLength = 4});
 
+  String getHello() {
+    return "Hello there";
+  }
+
   @override
   _SmsAutoFillWidgetState createState() => _SmsAutoFillWidgetState();
 }
