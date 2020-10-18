@@ -10,6 +10,10 @@ import 'package:sms_autofill/sms_autofill.dart';
 // }
 
 class SmsAutoFillWidget extends StatefulWidget {
+  final int codeLength;
+
+  const SmsAutoFillWidget({Key key, this.codeLength = 4});
+
   @override
   _SmsAutoFillWidgetState createState() => _SmsAutoFillWidgetState();
 }
@@ -17,7 +21,6 @@ class SmsAutoFillWidget extends StatefulWidget {
 class _SmsAutoFillWidgetState extends State<SmsAutoFillWidget> {
   String _code;
   String signature = "{{ app signature }}";
-  int _codeLength = 4;
 
   @override
   void initState() {
@@ -30,16 +33,12 @@ class _SmsAutoFillWidgetState extends State<SmsAutoFillWidget> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
       child: PinFieldAutoFill(
-        codeLength: _codeLength,
+        codeLength: widget.codeLength,
         onCodeChanged: (val) {
           print(val);
         },
       ),
     );
-  }
-
-  void setCodeLenght(int length) {
-    _codeLength = length;
   }
 
   void _listenOTP() async {
@@ -48,5 +47,6 @@ class _SmsAutoFillWidgetState extends State<SmsAutoFillWidget> {
 
   void getAppSignature() async {
     await SmsAutoFill().getAppSignature;
+    setState(() {});
   }
 }
